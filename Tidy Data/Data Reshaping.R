@@ -40,3 +40,12 @@ new_tidy_data
 new_tidy_data %>% ggplot(aes(year, `fertility rate`, color=country)) +
   geom_point()
 
+###longer to wider
+#pivot_wider(names_from = year, values_from = fertility):
+#Looks at year → finds 1960, 1961, etc. → makes them new column headers.
+#Looks at fertility → puts those numbers into the correct country/year cell.
+#All other columns not mentioned (country) → treated as row identifiers.
+
+new_wide_data <- new_tidy_data %>% 
+  pivot_wider(names_from = year, values_from = `fertility rate`)
+new_wide_data
