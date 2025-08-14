@@ -1,7 +1,7 @@
 getwd()
 
-install.packages("dslabs")
 library(dslabs)
+
 
 ###trasfering file with the R
 path <- system.file("extdata", package= "dslabs")
@@ -29,7 +29,7 @@ library(dslabs)
 library(tidyverse)    # includes readr
 library(readxl)
 
-#without reading the data just see the value
+#without importing just reading the data to see if is this have header or not.
 read_lines("murders.csv" , n_max=3)
 
 
